@@ -18,23 +18,28 @@
     $gender=$_POST["gender"];
 
 if (!preg_match("/^[ぁ-んァ-ヶ一-龯a-zA-Z]+$/u", $username)) {
-    echo "名前はひらがな、カタカナ、漢字、英字のみ使用できます。";
+    echo "名前はひらがな、カタカナ、漢字、英字のみ使用できます。<br>";
+    echo '<a href="form.php">フォームに戻る</a>';
     exit;
 }
 if ($age < 0 || $age > 150) {
-    echo "年齢は0〜150の間で入力してください。";
+    echo "年齢は0〜150の間で入力してください。<br>";
+    echo '<a href="form.php">フォームに戻る</a>';
     exit;
 }
 if(!preg_match("/^[0-9-]+$/",$phonenumber)){
-    echo "電話番号は半角数字とハイフンのみ使用できます。";
+    echo "電話番号は半角数字とハイフンのみ使用できます<br>。";
+    echo '<a href="form.php">フォームに戻る</a>';
     exit;
 }
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-    echo"メールアドレスの形式が正しくありません。";
+    echo"メールアドレスの形式が正しくありません。<br>";
+    echo '<a href="form.php">フォームに戻る</a>';
     exit;
  }
-if(!preg_match("/^[ぁ-んァ-ヶー-龯a-zA-Z0-9-]+$/u" , $address)){
-    echo"住所はひらがな、カタカナ、漢字、英字、半角数字、ハイフンのみ使用できます。";
+if(!preg_match("/^[ぁ-んァ-ヶーー-龯a-zA-Z0-9-]+$/u" , $address)){
+    echo"住所はひらがな、カタカナ、漢字、英字、半角数字、ハイフンのみ使用できます。<br>";
+    echo '<a href="form.php">フォームに戻る</a>';
     exit;
 }
 
